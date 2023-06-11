@@ -1,0 +1,148 @@
+#!/usr/bin/env python3
+import argparse
+import re
+import xml.etree.ElementTree as ET
+import sys
+
+from functools import reduce
+from keysym import keysymnames, keysymtab
+
+codetoname = {}
+
+for name, id in keysymnames.items():
+    if id in keysymtab:
+        code = keysymtab[id]
+    elif id > 0x1000000:
+        code = id & (0x1000000 - 1)
+    elif id <= 0xff:
+        code = id
+    else:
+        continue
+    codetoname[code] = name
+
+KEY_NAMES = {
+    'E00': 'TLDE',
+    'E01': 'AE01',
+    'E02': 'AE02',
+    'E03': 'AE03',
+    'E04': 'AE04',
+    'E05': 'AE05',
+    'E06': 'AE06',
+    'E07': 'AE07',
+    'E08': 'AE08',
+    'E09': 'AE09',
+    'E10': 'AE10',
+    'E11': 'AE11',
+    'E12': 'AE12',
+    'D01': 'AD01',
+    'D02': 'AD02',
+    'D03': 'AD03',
+    'D04': 'AD04',
+    'D05': 'AD05',
+    'D06': 'AD06',
+    'D07': 'AD07',
+    'D08': 'AD08',
+    'D09': 'AD09',
+    'D10': 'AD10',
+    'D11': 'AD11',
+    'D12': 'AD12',
+    'D13': 'BKSL',
+    'C01': 'AC01',
+    'C02': 'AC02',
+    'C03': 'AC03',
+    'C04': 'AC04',
+    'C05': 'AC05',
+    'C06': 'AC06',
+    'C07': 'AC07',
+    'C08': 'AC08',
+    'C09': 'AC09',
+    'C10': 'AC10',
+    'C11': 'AC11',
+    'B00': 'LSGT',
+    'B01': 'AB01',
+    'B02': 'AB02',
+    'B03': 'AB03',
+    'B04': 'AB04',
+    'B05': 'AB05',
+    'B06': 'AB06',
+    'B07': 'AB07',
+    'B08': 'AB08',
+    'B09': 'AB09',
+    'B10': 'AB10',
+    'A03': 'SPCE'
+}
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-n', '--name')
+    parser.add_argument('-d', '--description')
+    parser.add_argument('file')
+
+    args = parser.parse_args()
+
+    tree = ET.parse(args.file)
+
+    keys = {}
+
+    root = tree.getroot()
+
+    if args.description:
+        layout_description = args.description
+    else:
+        layout_description = root.find('names').find('name').attrib['value']
+
+    if args.name:
+        layout_name = args.name
+    else:
+        layout_name = re.sub(r'[^a-z_]+', '_', layout_description.lower())
+
+    for keymap in root.iterfind('keyMap'):
+        modifiers = keymap.attrib.get('modifiers', '').split()
+        levels = []
+        if 'caps' in modifiers:
+            levels.append(5)
+        if 'opt+shift' in modifiers:
+            levels.append(4)
+        if 'opt' in modifiers:
+            levels.append(3)
+        if 'shift' in modifiers or 'shift+caps?' in modifiers:
+            levels.append(2)
+        if not modifiers:
+            levels.append(1)
+        if not levels:
+            print('Unknown modifiers', modifiers, file=sys.stderr)
+            continue
+        for map in keymap.iterfind('map'):
+            key = KEY_NAMES[map.attrib['iso']]
+            char = map.attrib['to']
+            code = int(char[3:-1], 16) if char.startswith(r'\u') else ord(char)
+            name = codetoname[code] if code in codetoname else f'U{code:04X}'
+            if key not in keys:
+                keys[key] = ['VoidSymbol'] * 4 + ['']
+            for level in levels:
+                if level == 5 and keys[key][0] == name:
+                    continue
+                keys[key][level - 1] = name
+
+    widths = tuple(reduce(
+        lambda a, b: (max(x, y) for x, y in zip(a, b)),
+        ((len(name) for name in names) for names in keys.values())
+    ))
+
+    print('partial alphanumeric_keys')
+    print(f'xkb_symbols "{layout_name}" {{')
+    print(f'    name[Group1]= "{layout_description}";\n')
+    for key, names in keys.items():
+        n = [f'{name:>{widths[i]}}' for i, name in enumerate(names) if name]
+        l = f'[ {", ".join(n)} ]'
+        if len(n) == 5:
+            l += ', type[group1]="FOUR_LEVEL_PLUS_LOCK" '
+        print(f'    key <{key}> {{{l}}};')
+    print()
+    print('    include "level3(ralt_switch)"')
+    print('};')
+
+
+if __name__ == '__main__':
+    main()

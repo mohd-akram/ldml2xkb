@@ -1,0 +1,41 @@
+#!/bin/sh
+
+set -euo pipefail
+
+repo=https://raw.githubusercontent.com/xkbcommon/libxkbcommon/master
+
+keysym_names=$repo/include/xkbcommon/xkbcommon-keysyms.h
+keysym_chars=$repo/src/keysym-utf.c
+
+curl -sSfL "$keysym_names" |
+sed -n '
+1c\
+keysymnames = {
+
+/^#define XKB_KEY/{
+	s/#define XKB_KEY_\([^[:space:]]*\)/    "\1":/
+	s/\/\*/#/
+	s/[[:space:]]*#/,&/
+	s/[[:space:]]*\*\///
+	/,/!s/$/,/
+	p
+}
+
+$c\
+}
+'
+
+echo
+
+curl -sSfL "$keysym_chars" |
+sed -n '
+/keysymtab\[\] =/,/^};/{
+	s/^.*keysymtab\[\] = {/keysymtab = {/
+	s/^[[:space:]]*{[[:space:]]*/    /
+	s/[[:space:]]},/,/
+	s/,/:/
+	s/[[:space:]]\*\///
+	s/\/\*/#/
+	s/^};/}/
+	p
+}'
