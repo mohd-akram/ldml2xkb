@@ -10,14 +10,14 @@ from keysym import keysymnames, keysymtab
 codetoname = {}
 
 for name, id in keysymnames.items():
-    if id in keysymtab:
-        code = keysymtab[id]
+    if id < 0x100:
+        code = id
     elif id > 0x1000000:
         code = id & (0x1000000 - 1)
-    elif id <= 0xff:
-        code = id
     else:
-        continue
+        code = keysymtab.get(id)
+        if code is None or code in codetoname:
+            continue
     codetoname[code] = name
 
 KEY_NAMES = {

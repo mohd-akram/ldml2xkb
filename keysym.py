@@ -354,7 +354,6 @@ keysymnames = {
     "percent":                       0x0025,  # U+0025 PERCENT SIGN
     "ampersand":                     0x0026,  # U+0026 AMPERSAND
     "apostrophe":                    0x0027,  # U+0027 APOSTROPHE
-    "quoteright":                    0x0027,  # deprecated
     "parenleft":                     0x0028,  # U+0028 LEFT PARENTHESIS
     "parenright":                    0x0029,  # U+0029 RIGHT PARENTHESIS
     "asterisk":                      0x002a,  # U+002A ASTERISK
@@ -412,7 +411,6 @@ keysymnames = {
     "asciicircum":                   0x005e,  # U+005E CIRCUMFLEX ACCENT
     "underscore":                    0x005f,  # U+005F LOW LINE
     "grave":                         0x0060,  # U+0060 GRAVE ACCENT
-    "quoteleft":                     0x0060,  # deprecated
     "a":                             0x0061,  # U+0061 LATIN SMALL LETTER A
     "b":                             0x0062,  # U+0062 LATIN SMALL LETTER B
     "c":                             0x0063,  # U+0063 LATIN SMALL LETTER C
@@ -492,7 +490,6 @@ keysymnames = {
     "Icircumflex":                   0x00ce,  # U+00CE LATIN CAPITAL LETTER I WITH CIRCUMFLEX
     "Idiaeresis":                    0x00cf,  # U+00CF LATIN CAPITAL LETTER I WITH DIAERESIS
     "ETH":                           0x00d0,  # U+00D0 LATIN CAPITAL LETTER ETH
-    "Eth":                           0x00d0,  # deprecated
     "Ntilde":                        0x00d1,  # U+00D1 LATIN CAPITAL LETTER N WITH TILDE
     "Ograve":                        0x00d2,  # U+00D2 LATIN CAPITAL LETTER O WITH GRAVE
     "Oacute":                        0x00d3,  # U+00D3 LATIN CAPITAL LETTER O WITH ACUTE
@@ -508,7 +505,6 @@ keysymnames = {
     "Udiaeresis":                    0x00dc,  # U+00DC LATIN CAPITAL LETTER U WITH DIAERESIS
     "Yacute":                        0x00dd,  # U+00DD LATIN CAPITAL LETTER Y WITH ACUTE
     "THORN":                         0x00de,  # U+00DE LATIN CAPITAL LETTER THORN
-    "Thorn":                         0x00de,  # deprecated
     "ssharp":                        0x00df,  # U+00DF LATIN SMALL LETTER SHARP S
     "agrave":                        0x00e0,  # U+00E0 LATIN SMALL LETTER A WITH GRAVE
     "aacute":                        0x00e1,  # U+00E1 LATIN SMALL LETTER A WITH ACUTE
@@ -623,7 +619,6 @@ keysymnames = {
     "ubreve":                        0x02fd,  # U+016D LATIN SMALL LETTER U WITH BREVE
     "scircumflex":                   0x02fe,  # U+015D LATIN SMALL LETTER S WITH CIRCUMFLEX
     "kra":                           0x03a2,  # U+0138 LATIN SMALL LETTER KRA
-    "kappa":                         0x03a2,  # deprecated
     "Rcedilla":                      0x03a3,  # U+0156 LATIN CAPITAL LETTER R WITH CEDILLA
     "Itilde":                        0x03a5,  # U+0128 LATIN CAPITAL LETTER I WITH TILDE
     "Lcedilla":                      0x03a6,  # U+013B LATIN CAPITAL LETTER L WITH CEDILLA
@@ -693,7 +688,6 @@ keysymnames = {
     "kana_closingbracket":           0x04a3,  # U+300D RIGHT CORNER BRACKET
     "kana_comma":                    0x04a4,  # U+3001 IDEOGRAPHIC COMMA
     "kana_conjunctive":              0x04a5,  # U+30FB KATAKANA MIDDLE DOT
-    "kana_middledot":                0x04a5,  # deprecated
     "kana_WO":                       0x04a6,  # U+30F2 KATAKANA LETTER WO
     "kana_a":                        0x04a7,  # U+30A1 KATAKANA LETTER SMALL A
     "kana_i":                        0x04a8,  # U+30A3 KATAKANA LETTER SMALL I
@@ -704,7 +698,6 @@ keysymnames = {
     "kana_yu":                       0x04ad,  # U+30E5 KATAKANA LETTER SMALL YU
     "kana_yo":                       0x04ae,  # U+30E7 KATAKANA LETTER SMALL YO
     "kana_tsu":                      0x04af,  # U+30C3 KATAKANA LETTER SMALL TU
-    "kana_tu":                       0x04af,  # deprecated
     "prolongedsound":                0x04b0,  # U+30FC KATAKANA-HIRAGANA PROLONGED SOUND MARK
     "kana_A":                        0x04b1,  # U+30A2 KATAKANA LETTER A
     "kana_I":                        0x04b2,  # U+30A4 KATAKANA LETTER I
@@ -723,9 +716,7 @@ keysymnames = {
     "kana_SO":                       0x04bf,  # U+30BD KATAKANA LETTER SO
     "kana_TA":                       0x04c0,  # U+30BF KATAKANA LETTER TA
     "kana_CHI":                      0x04c1,  # U+30C1 KATAKANA LETTER TI
-    "kana_TI":                       0x04c1,  # deprecated
     "kana_TSU":                      0x04c2,  # U+30C4 KATAKANA LETTER TU
-    "kana_TU":                       0x04c2,  # deprecated
     "kana_TE":                       0x04c3,  # U+30C6 KATAKANA LETTER TE
     "kana_TO":                       0x04c4,  # U+30C8 KATAKANA LETTER TO
     "kana_NA":                       0x04c5,  # U+30CA KATAKANA LETTER NA
@@ -736,7 +727,6 @@ keysymnames = {
     "kana_HA":                       0x04ca,  # U+30CF KATAKANA LETTER HA
     "kana_HI":                       0x04cb,  # U+30D2 KATAKANA LETTER HI
     "kana_FU":                       0x04cc,  # U+30D5 KATAKANA LETTER HU
-    "kana_HU":                       0x04cc,  # deprecated
     "kana_HE":                       0x04cd,  # U+30D8 KATAKANA LETTER HE
     "kana_HO":                       0x04ce,  # U+30DB KATAKANA LETTER HO
     "kana_MA":                       0x04cf,  # U+30DE KATAKANA LETTER MA
@@ -822,7 +812,6 @@ keysymnames = {
     "Arabic_meem":                   0x05e5,  # U+0645 ARABIC LETTER MEEM
     "Arabic_noon":                   0x05e6,  # U+0646 ARABIC LETTER NOON
     "Arabic_ha":                     0x05e7,  # U+0647 ARABIC LETTER HEH
-    "Arabic_heh":                    0x05e7,  # deprecated
     "Arabic_waw":                    0x05e8,  # U+0648 ARABIC LETTER WAW
     "Arabic_alefmaksura":            0x05e9,  # U+0649 ARABIC LETTER ALEF MAKSURA
     "Arabic_yeh":                    0x05ea,  # U+064A ARABIC LETTER YEH
@@ -882,47 +871,33 @@ keysymnames = {
     "Macedonia_gje":                 0x06a2,  # U+0453 CYRILLIC SMALL LETTER GJE
     "Cyrillic_io":                   0x06a3,  # U+0451 CYRILLIC SMALL LETTER IO
     "Ukrainian_ie":                  0x06a4,  # U+0454 CYRILLIC SMALL LETTER UKRAINIAN IE
-    "Ukranian_je":                   0x06a4,  # deprecated
     "Macedonia_dse":                 0x06a5,  # U+0455 CYRILLIC SMALL LETTER DZE
     "Ukrainian_i":                   0x06a6,  # U+0456 CYRILLIC SMALL LETTER BYELORUSSIAN-UKRAINIAN I
-    "Ukranian_i":                    0x06a6,  # deprecated
     "Ukrainian_yi":                  0x06a7,  # U+0457 CYRILLIC SMALL LETTER YI
-    "Ukranian_yi":                   0x06a7,  # deprecated
     "Cyrillic_je":                   0x06a8,  # U+0458 CYRILLIC SMALL LETTER JE
-    "Serbian_je":                    0x06a8,  # deprecated
     "Cyrillic_lje":                  0x06a9,  # U+0459 CYRILLIC SMALL LETTER LJE
-    "Serbian_lje":                   0x06a9,  # deprecated
     "Cyrillic_nje":                  0x06aa,  # U+045A CYRILLIC SMALL LETTER NJE
-    "Serbian_nje":                   0x06aa,  # deprecated
     "Serbian_tshe":                  0x06ab,  # U+045B CYRILLIC SMALL LETTER TSHE
     "Macedonia_kje":                 0x06ac,  # U+045C CYRILLIC SMALL LETTER KJE
     "Ukrainian_ghe_with_upturn":     0x06ad,  # U+0491 CYRILLIC SMALL LETTER GHE WITH UPTURN
     "Byelorussian_shortu":           0x06ae,  # U+045E CYRILLIC SMALL LETTER SHORT U
     "Cyrillic_dzhe":                 0x06af,  # U+045F CYRILLIC SMALL LETTER DZHE
-    "Serbian_dze":                   0x06af,  # deprecated
     "numerosign":                    0x06b0,  # U+2116 NUMERO SIGN
     "Serbian_DJE":                   0x06b1,  # U+0402 CYRILLIC CAPITAL LETTER DJE
     "Macedonia_GJE":                 0x06b2,  # U+0403 CYRILLIC CAPITAL LETTER GJE
     "Cyrillic_IO":                   0x06b3,  # U+0401 CYRILLIC CAPITAL LETTER IO
     "Ukrainian_IE":                  0x06b4,  # U+0404 CYRILLIC CAPITAL LETTER UKRAINIAN IE
-    "Ukranian_JE":                   0x06b4,  # deprecated
     "Macedonia_DSE":                 0x06b5,  # U+0405 CYRILLIC CAPITAL LETTER DZE
     "Ukrainian_I":                   0x06b6,  # U+0406 CYRILLIC CAPITAL LETTER BYELORUSSIAN-UKRAINIAN I
-    "Ukranian_I":                    0x06b6,  # deprecated
     "Ukrainian_YI":                  0x06b7,  # U+0407 CYRILLIC CAPITAL LETTER YI
-    "Ukranian_YI":                   0x06b7,  # deprecated
     "Cyrillic_JE":                   0x06b8,  # U+0408 CYRILLIC CAPITAL LETTER JE
-    "Serbian_JE":                    0x06b8,  # deprecated
     "Cyrillic_LJE":                  0x06b9,  # U+0409 CYRILLIC CAPITAL LETTER LJE
-    "Serbian_LJE":                   0x06b9,  # deprecated
     "Cyrillic_NJE":                  0x06ba,  # U+040A CYRILLIC CAPITAL LETTER NJE
-    "Serbian_NJE":                   0x06ba,  # deprecated
     "Serbian_TSHE":                  0x06bb,  # U+040B CYRILLIC CAPITAL LETTER TSHE
     "Macedonia_KJE":                 0x06bc,  # U+040C CYRILLIC CAPITAL LETTER KJE
     "Ukrainian_GHE_WITH_UPTURN":     0x06bd,  # U+0490 CYRILLIC CAPITAL LETTER GHE WITH UPTURN
     "Byelorussian_SHORTU":           0x06be,  # U+040E CYRILLIC CAPITAL LETTER SHORT U
     "Cyrillic_DZHE":                 0x06bf,  # U+040F CYRILLIC CAPITAL LETTER DZHE
-    "Serbian_DZE":                   0x06bf,  # deprecated
     "Cyrillic_yu":                   0x06c0,  # U+044E CYRILLIC SMALL LETTER YU
     "Cyrillic_a":                    0x06c1,  # U+0430 CYRILLIC SMALL LETTER A
     "Cyrillic_be":                   0x06c2,  # U+0431 CYRILLIC SMALL LETTER BE
@@ -1241,19 +1216,13 @@ keysymnames = {
     "hebrew_doublelowline":          0x0cdf,  # U+2017 DOUBLE LOW LINE
     "hebrew_aleph":                  0x0ce0,  # U+05D0 HEBREW LETTER ALEF
     "hebrew_bet":                    0x0ce1,  # U+05D1 HEBREW LETTER BET
-    "hebrew_beth":                   0x0ce1,  # deprecated
     "hebrew_gimel":                  0x0ce2,  # U+05D2 HEBREW LETTER GIMEL
-    "hebrew_gimmel":                 0x0ce2,  # deprecated
     "hebrew_dalet":                  0x0ce3,  # U+05D3 HEBREW LETTER DALET
-    "hebrew_daleth":                 0x0ce3,  # deprecated
     "hebrew_he":                     0x0ce4,  # U+05D4 HEBREW LETTER HE
     "hebrew_waw":                    0x0ce5,  # U+05D5 HEBREW LETTER VAV
     "hebrew_zain":                   0x0ce6,  # U+05D6 HEBREW LETTER ZAYIN
-    "hebrew_zayin":                  0x0ce6,  # deprecated
     "hebrew_chet":                   0x0ce7,  # U+05D7 HEBREW LETTER HET
-    "hebrew_het":                    0x0ce7,  # deprecated
     "hebrew_tet":                    0x0ce8,  # U+05D8 HEBREW LETTER TET
-    "hebrew_teth":                   0x0ce8,  # deprecated
     "hebrew_yod":                    0x0ce9,  # U+05D9 HEBREW LETTER YOD
     "hebrew_finalkaph":              0x0cea,  # U+05DA HEBREW LETTER FINAL KAF
     "hebrew_kaph":                   0x0ceb,  # U+05DB HEBREW LETTER KAF
@@ -1263,20 +1232,15 @@ keysymnames = {
     "hebrew_finalnun":               0x0cef,  # U+05DF HEBREW LETTER FINAL NUN
     "hebrew_nun":                    0x0cf0,  # U+05E0 HEBREW LETTER NUN
     "hebrew_samech":                 0x0cf1,  # U+05E1 HEBREW LETTER SAMEKH
-    "hebrew_samekh":                 0x0cf1,  # deprecated
     "hebrew_ayin":                   0x0cf2,  # U+05E2 HEBREW LETTER AYIN
     "hebrew_finalpe":                0x0cf3,  # U+05E3 HEBREW LETTER FINAL PE
     "hebrew_pe":                     0x0cf4,  # U+05E4 HEBREW LETTER PE
     "hebrew_finalzade":              0x0cf5,  # U+05E5 HEBREW LETTER FINAL TSADI
-    "hebrew_finalzadi":              0x0cf5,  # deprecated
     "hebrew_zade":                   0x0cf6,  # U+05E6 HEBREW LETTER TSADI
-    "hebrew_zadi":                   0x0cf6,  # deprecated
     "hebrew_qoph":                   0x0cf7,  # U+05E7 HEBREW LETTER QOF
-    "hebrew_kuf":                    0x0cf7,  # deprecated
     "hebrew_resh":                   0x0cf8,  # U+05E8 HEBREW LETTER RESH
     "hebrew_shin":                   0x0cf9,  # U+05E9 HEBREW LETTER SHIN
     "hebrew_taw":                    0x0cfa,  # U+05EA HEBREW LETTER TAV
-    "hebrew_taf":                    0x0cfa,  # deprecated
     "Hebrew_switch":                 0xff7e,  # Alias for mode_switch
     "Thai_kokai":                    0x0da1,  # U+0E01 THAI CHARACTER KO KAI
     "Thai_khokhai":                  0x0da2,  # U+0E02 THAI CHARACTER KHO KHAI
@@ -3331,4 +3295,3 @@ keysymtab = {
     0x13be: 0x0178, #                  Ydiaeresis Ÿ LATIN CAPITAL LETTER Y WITH DIAERESIS
     0x20ac: 0x20ac, #                    EuroSign € EURO SIGN
 }
-

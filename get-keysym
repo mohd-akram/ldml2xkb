@@ -12,6 +12,8 @@ sed -n '
 1c\
 keysymnames = {
 
+/deprecated/d
+
 /^#define XKB_KEY/{
 	s/#define XKB_KEY_\([^[:space:]]*\)/    "\1":/
 	s/\/\*/#/
