@@ -12,6 +12,8 @@ sed -n '
 1c\
 keysymnames = {
 
+/use of the following macros is deprecated/,/^$/d
+
 /deprecated/d
 
 /^#define XKB_KEY/{

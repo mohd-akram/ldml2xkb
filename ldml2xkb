@@ -10,6 +10,8 @@ from keysym import keysymnames, keysymtab
 codetoname = {}
 
 for name, id in keysymnames.items():
+    if name.startswith('hp'):
+        continue
     if id < 0x100:
         code = id
     elif id > 0x1000000:
@@ -119,7 +121,7 @@ def main():
             code = int(char[3:-1], 16) if char.startswith(r'\u') else ord(char)
             name = codetoname[code] if code in codetoname else f'U{code:04X}'
             if key not in keys:
-                keys[key] = ['VoidSymbol'] * 4 + ['']
+                keys[key] = ['none'] * 4 + ['']
             for level in levels:
                 if level == 5 and keys[key][0] == name:
                     continue
